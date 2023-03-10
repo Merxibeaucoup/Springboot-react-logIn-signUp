@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import newRequest from "../utils/newRequest";
 
 const Home = () => {
@@ -18,7 +19,13 @@ const Home = () => {
   return (
     <div>
       <button onClick={handleLogout}>Logout</button>
-      <span>{currentUser?.email}</span>
+      <p> welcome {currentUser?.firstname}</p>
+
+      <div>
+        <Link to="/login">
+          <button>Login</button>
+        </Link>
+      </div>
     </div>
   );
 };

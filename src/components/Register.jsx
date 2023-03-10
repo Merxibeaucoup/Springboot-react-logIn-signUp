@@ -21,9 +21,10 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await newRequest.post("/auth/register", {
+      const res = await newRequest.post("/auth/register", {
         ...user,
       });
+      localStorage.setItem("currentUser", JSON.stringify(res.data));
       navigate("/");
     } catch (err) {
       console.log(err);

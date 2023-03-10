@@ -7,6 +7,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
 
+  // const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
