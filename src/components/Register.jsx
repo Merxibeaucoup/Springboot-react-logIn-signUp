@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import newRequest from "../utils/newRequest";
 
 const Register = () => {
@@ -10,7 +10,7 @@ const Register = () => {
     password: "",
   });
 
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setUser((prev) => {
@@ -24,7 +24,7 @@ const Register = () => {
       await newRequest.post("/auth/register", {
         ...user,
       });
-      //   navigate("/");
+      navigate("/");
     } catch (err) {
       console.log(err);
     }
